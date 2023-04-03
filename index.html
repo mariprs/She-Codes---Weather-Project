@@ -15,7 +15,7 @@
     <link rel="stylesheet" href="style.css">
     <title>SheCodes Exercise</title>
   </head>
-  <body style="background-color: #c3c7cd; position: relative; color: #5a6275 ;padding: 2%; font-family: "Aktiv Grotesk", -apple-system, BlinkMacSystemFont, "San Francisco", "Segoe UI", Roboto, "Helvetica Neue", Sans-Serif; font-height: 400; font-size: 16px;">
+  <body style="background-color: #c3c7cd; position: relative; color: #5a6275 ;padding: 2%; font-family: 'Aktiv Grotesk', -apple-system, BlinkMacSystemFont, "San Francisco", "Segoe UI", Roboto, "Helvetica Neue", Sans-Serif; font-height: 400; font-size: 16px;">
     <div
       class="card mx-auto "
       style="
@@ -58,26 +58,30 @@
       
       
       <li style="padding: 1px;display:block; font-weight: 600; text-align: center; font-size: 16px; background-color: #AEB2BB; text-transform: capitalize;" id="city"></li>
-<div class="modal-dialog" style=" text-align: center; margin: 0 auto;">
+<div class="" style=" text-align: center; margin: 0 auto;">
     <i class="fa-regular fa-calendar" style="font-size: 30px;"></i><li style="padding: 10px;display:inline-block; font-weight: 600; font-size: 26px; background-color: #AEB2BB;" class="today"></li>
 </br>
 
 <div class="container">
     <div class="row">
-      <div class="col-6 col-sm-4" style="font-size: 60px; margin-left: 100px; align-items: center;">          <img id="replacePicOne" src="" /></div>
-      <div class="col-6 col-sm-4" style="font-size: 60px;">     </div>
-  
+      <div class="col-6 col-sm-4" style="font-size: 60px; margin-left: 100px; align-items: center;">          <img style="background-color: #A5AAB4"id="replacePicOne" src="" /></div>
+      <div class="col-6 col-sm-4" style="display: inline-flex;
+    align-items: center;
+    justify-content: center;">    
+      <div style="font-size: 25px; font-weight: 400;"><span style="background-color: #A5AAB4; font-weight: 400" id="unitConv"><a href="" id="celciusText">ºC</a>/<a href="" id="fahrenheitText">ºF</a></span></div>
+   </div>
       <!-- Force next columns to break to new line at md breakpoint and up -->
       <div class="w-100 d-none d-md-block"></div>
   
       <div class="col-6 col-sm-4" style="font-size: 25px; font-weight: 400; margin-left:100px;"><span style="background-color: #A5AAB4; font-weight: 400" id="temp-now"></span></div>
-      <div class="col-6 col-sm-4" style="font-size: 22px;"><p style="background-color: #A5AAB4;" id="humidityPerc"></p></div>
 
-    <div class="w-100 d-none d-md-block"></div>
-  
-    <div class="col-6 col-sm-4" id="mainDescription" style="margin-left: 100px; font-size: 20px; text-transform: capitalize;"></div>
-    <p class="col-6 col-sm-4" style="font-size: 20px;" id="wind">
-    </p>
+      <div class="col-6 col-sm-4 " style="font-size: 22px;"><p style="background-color: #A5AAB4;" id="humidityPerc"></p></div>
+      
+      <div class="w-100 d-none d-md-block"></div>
+      
+      <div class="col-6 col-sm-4" id="mainDescription" style="margin-left: 100px; font-size: 20px; text-transform: capitalize;"></div>
+      <p class="col-6 col-sm-4" style="font-size: 20px;" id="wind">
+      </p>
     </div>
   </div>
 </div>

@@ -36,7 +36,6 @@ function search(event) {
   function showTemp(response) {
     let roundedTemp = Math.round(response.data.temperature.current);
     let temperatureElement = `${roundedTemp}ºC`;
-    console.log(temperatureElement);
     let replace = document.getElementById("temp-now");
     replace.innerHTML = `${temperatureElement}`;
     //image
@@ -54,6 +53,22 @@ function search(event) {
     let wind = response.data.wind.speed;
     let windResponse = document.getElementById("wind");
     windResponse.innerHTML = `${wind}km/h Wind`;
+    // fahrenheit conversion
+    function showFahrenheitTemp(event) {
+      event.preventDefault();
+      let fahrenheitTemperature = roundedTemp * 1.8 + 32;
+      let finalFahrenheitText = `${fahrenheitTemperature}ºF`;
+      replace.innerHTML = `${finalFahrenheitText}`;
+    }
+    let fahrenheitLink = document.getElementById("fahrenheitText");
+    fahrenheitLink.addEventListener("click", showFahrenheitTemp);
+    //celsius conversion
+    function showCelciusTemp(event) {
+      event.preventDefault();
+      replace.innerHTML = `${temperatureElement}`;
+    }
+    let celciusLink = document.getElementById("celciusText");
+    celciusLink.addEventListener("click", showCelciusTemp);
   }
   axios.get(`${apiURL}${city}&key=${apiKey}&units=${unit}`).then(showTemp);
 }
