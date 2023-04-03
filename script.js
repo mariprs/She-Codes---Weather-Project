@@ -1,4 +1,4 @@
-let apiKey = "a969311cfcbb4a83dfad2cf7478397f9";
+let apiKey = "3bef43ebc55cddcde9520t9o4186efa4";
 
 function todayDate(date) {
   let hours = date.getHours();
@@ -17,7 +17,7 @@ function todayDate(date) {
     "Wednesday",
     "Thursday",
     "Friday",
-    "Saturday"
+    "Saturday",
   ];
   let day = days[dayIndex];
 
@@ -31,16 +31,31 @@ function search(event) {
   cityElement.innerHTML = `Weather in ${cityInput.value}`;
   let city = cityInput.value;
   let unit = "metric";
-  let apiURL = "https://api.openweathermap.org/data/2.5/weather?q=";
+  let apiURL = "https://api.shecodes.io/weather/v1/current?query=";
 
   function showTemp(response) {
-    let roundedTemp = Math.round(response.data.main.temp);
+    let roundedTemp = Math.round(response.data.temperature.current);
     let temperatureElement = `${roundedTemp}ºC`;
     console.log(temperatureElement);
     let replace = document.getElementById("temp-now");
     replace.innerHTML = `${temperatureElement}`;
+    //image
+    const imageURL = response.data.condition.icon_url;
+    const imageElement = document.getElementById("replacePicOne");
+    imageElement.src = imageURL;
+    //description
+    replaceDesc = document.getElementById("mainDescription");
+    replaceDesc.innerHTML = `${response.data.condition.description}`;
+    //humidity - percentage
+    let humidity = response.data.temperature.humidity;
+    let humidityPerc = document.getElementById("humidityPerc");
+    humidityPerc.innerHTML = `${humidity}% Humidity`;
+    //wind
+    let wind = response.data.wind.speed;
+    let windResponse = document.getElementById("wind");
+    windResponse.innerHTML = `${wind}km/h Wind`;
   }
-  axios.get(`${apiURL}${city}&units=${unit}&appid=${apiKey}`).then(showTemp);
+  axios.get(`${apiURL}${city}&key=${apiKey}&units=${unit}`).then(showTemp);
 }
 
 let dateElement = document.querySelector(".today");
