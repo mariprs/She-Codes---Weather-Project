@@ -75,46 +75,23 @@ function search(event) {
     let windResponse = document.getElementById("wind");
     windResponse.innerHTML = `${wind}km/h Wind`;
 
-    function displayForecast(event) {
+    function displayForecast() {
       let forecastElement = document.getElementById("forecast");
       let forecastHTML = `<div class="row" style="display: contents; margin: 0 auto;">`;
-      forecastHTML =
-        forecastHTML +
-        `          <div class="col">
-        <div class="weather-forecast-date">MON</div>
+      let days = ["MON", "THU", "WED", "TUE", "FRI"];
+      days.forEach(function (day) {
+        forecastHTML =
+          forecastHTML +
+          `          <div class="col">
+        <div class="weather-forecast-date">${day}</div>
         <i class="fa-solid fa-cloud-sun-rain" style="width: 42;"></i>
-        <div class="col" style="font-size: 18px; "><span style="background-color: #A6AAB4" class="weather-forecast-temp-max">28ºC /</span><span class="weather-forecast-temp-min"> 25ºC</span></div>
+        <div class="col" style="font-size: 18px; ">
+        <span style="background-color: #A6AAB4" class="weather-forecast-temp-max">28ºC /</span>
+        <span class="weather-forecast-temp-min"> 25ºC</span></div>
 </div> `;
-      forecastHTML =
-        forecastHTML +
-        `          <div class="col">
-        <div class="weather-forecast-date">THU</div>
-        <i class="fa-solid fa-cloud-sun-rain" style="width: 42;"></i>
-        <div class="col" style="font-size: 18px; "><span style="background-color: #A6AAB4" class="weather-forecast-temp-max">28ºC /</span><span class="weather-forecast-temp-min"> 25ºC</span></div>
-</div> `;
-      forecastHTML =
-        forecastHTML +
-        `          <div class="col">
-        <div class="weather-forecast-date">WED</div>
-        <i class="fa-solid fa-cloud-sun-rain" style="width: 42;"></i>
-        <div class="col" style="font-size: 18px; "><span style="background-color: #A6AAB4" class="weather-forecast-temp-max">28ºC /</span><span class="weather-forecast-temp-min"> 25ºC</span></div>
-</div> `;
-      forecastHTML =
-        forecastHTML +
-        `          <div class="col">
-        <div class="weather-forecast-date">TUE</div>
-        <i class="fa-solid fa-cloud-sun-rain" style="width: 42;"></i>
-        <div class="col" style="font-size: 18px; "><span style="background-color: #A6AAB4" class="weather-forecast-temp-max">28ºC  /</span><span class="weather-forecast-temp-min"> 25ºC</span></div>
-</div> `;
-      forecastHTML =
-        forecastHTML +
-        `          <div class="col">
-        <div class="weather-forecast-date">FRI</div>
-        <i class="fa-solid fa-cloud-sun-rain" style="width: 42;"></i>
-        <div class="col" style="font-size: 18px; "><span style="background-color: #A6AAB4" class="weather-forecast-temp-max">28ºC /</span><span class="weather-forecast-temp-min"> 25ºC</span></div>
-</div> `;
-      forecastHTML = forecastHTML + `</div>`;
-      forecastElement.innerHTML = forecastHTML;
+        forecastHTML = forecastHTML + `</div>`;
+        forecastElement.innerHTML = forecastHTML;
+      });
     }
     displayForecast();
   }
